@@ -37,7 +37,7 @@ public class AdminFilter implements Filter {
         
         UserDB accessUsers = new UserDB();
         
-        if (!accessUsers.get(email).getRole().getRoleName().equals("system admin")) {
+        if (!accessUsers.get(email).getRole().getRoleId().equals(new Integer(1))) {
             HttpServletResponse httpResponse = (HttpServletResponse)response;
             httpResponse.sendRedirect("notes");
             return;
